@@ -1,6 +1,8 @@
-module github.com/danrusei/gobot-bsky
+module github.com/gm0stache/gobot-bsky
 
-go 1.21.6
+replace github.com/danrusei/gobot-bsky => github.com/gm0stache/gobot-bsky v0.1.0
+
+go 1.22
 
 require (
 	github.com/bluesky-social/indigo v0.0.0-20240313175749-733547c2ba2c
