@@ -26,6 +26,7 @@ const (
 type PostBuilder struct {
 	Text  string
 	Facet []Facet
+	Tags  []string
 	Embed Embed
 }
 
@@ -91,12 +92,21 @@ func (pb PostBuilder) WithImages(blobs []lexutil.LexBlob, images []Image) PostBu
 	return pb
 }
 
+// WithTags attaches regular 'tags' to a post.
+// Such tags are used by various filtering/search mechanisms.
+func (pb PostBuilder) WithTags(tags ...string) PostBuilder {
+	pb.Tags = tags
+
+	return pb
+}
+
 // Build the request
 func (pb PostBuilder) Build() (appbsky.FeedPost, error) {
 
 	post := appbsky.FeedPost{}
 
 	post.Text = pb.Text
+	post.Tags = pb.Tags
 	post.LexiconTypeID = "app.bsky.feed.post"
 	post.CreatedAt = time.Now().Format(util.ISO8601)
 
