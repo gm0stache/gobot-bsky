@@ -2,11 +2,8 @@ module github.com/gm0stache/gobot-bsky
 
 go 1.22
 
-replace github.com/danrusei/gobot-bsky v0.1.0 => github.com/gm0stache/gobot-bsky v0.1.0
-
 require (
 	github.com/bluesky-social/indigo v0.0.0-20240313175749-733547c2ba2c
-	github.com/danrusei/gobot-bsky v0.1.0
 	github.com/joho/godotenv v1.5.1
 )
 

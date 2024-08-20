@@ -9,7 +9,7 @@ import (
 
 	"github.com/joho/godotenv"
 
-	gobot "github.com/danrusei/gobot-bsky"
+	gobot "github.com/gm0stache/gobot-bsky"
 )
 
 func main() {
